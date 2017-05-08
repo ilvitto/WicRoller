@@ -1,0 +1,48 @@
+<WicRoller>:
+    GridLayout:
+        cols: 3
+        Label:
+            color: 0.2,0.8,0.8,1.0
+            text: "WicRoller Interface"
+        Label:
+            text: "Rotation Value"
+            color: 1,0,0,1
+        Label:
+            text: "Volume"
+            color: 1,0,0,1
+        Button:
+            text: "Start Connection"
+            background_color: [0.2,0.8,0.3,1.0]
+            background_normal: 'green.png'
+            background_down: 'orange.png'
+            border: 30,30,30,30
+            on_release: root.start_simple_interface()
+        Label:
+            id: gZ
+            text: "0"
+        Label:
+            id: volume
+            text: "0"
+        Label:
+            text: "Low Threshold"
+        Label:
+            text: "High Threshold"
+        Label:
+            text: ""
+        TextInput:
+            id: hightThreshold
+            padding_y: self.height/3
+            padding_x: self.width/3
+            multiline: False
+            text: str(root.threshold)
+            on_text_validate: root.setThreshold(self.text)
+        TextInput:
+            id: lowThreshold
+            padding_y: self.height/3
+            padding_x: self.width/3
+            multiline: False
+            text: str(root.second_threshold)
+            on_text_validate: root.setSecondThreshold(self.text)
+        Label:
+            text: ""
+        

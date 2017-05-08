@@ -1,0 +1,41 @@
+<WicRoller>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 3
+            size_hint_y: 0.5
+            Button:
+                size_hint_y: 0.5
+                font_size: dp(25)
+                text: "Start Connection"
+                background_color: [0.2,0.8,0.3,1.0]
+                background_normal: 'green.png'
+                background_down: 'orange.png'
+                border: 30,20,30,20
+                on_release: root.start_slider_interface_2_mod_mute()
+            Label:
+                font_size: dp(40)
+                text: "WicRoller\nInterface"
+                multiline: True
+                color: 0.2,0.8,0.8,1.0
+            Button:
+                font_size: dp(25)
+                id: mod
+                text: "Mode: Discrete"
+                background_color: [0.8,0.4,0.9,1.0]
+                background_normal: 'green.png'
+                background_down: 'orange.png'
+                border: 30,30,30,30
+                on_release: root.changeMode()
+        GridLayout:
+            cols: 3
+            Label:
+                text: ""
+            Slider:
+                id: slider
+                value: root.volume
+                on_value: root.setVolume(self.value)
+            Label:
+                font_size: dp(30)
+                id: volume
+                text: "Volume %"
